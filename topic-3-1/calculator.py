@@ -8,18 +8,26 @@ school_day_minutes = {
 }
 
 day = input("What day is it? ").strip().capitalize()
-periods = 7
+periods_by_day = {
+	"Monday": 7,
+	"Tuesday": 4,
+	"Wednesday": 4,
+	"Thursday": 4,
+	"Friday": 4,
+}
 break_minutes = 10
+periods = periods_by_day.get(day, 0)
 
 has_free_period = input("Do you have any free periods? (yes/no) ").strip().lower()
 free_periods = 0
 if has_free_period == "yes":
 	free_periods = int(input("How many free periods? "))
-breaks = free_periods - 1
+breaks = periods - 1 if periods > 0 else 0
 
 
 if day not in school_day_minutes:
 	print("Please enter a weekday from Monday through Friday.")
+	periods = 0
 elif periods <= 0:
 	print("The number of periods must be greater than zero.")
 elif breaks < 0 or break_minutes < 0:
