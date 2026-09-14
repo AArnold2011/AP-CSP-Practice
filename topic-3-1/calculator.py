@@ -4,7 +4,6 @@ school_day_minutes = {
 	"Wednesday": 385,
 	"Thursday": 425,
 	"Friday": 375,
-	
 }
 
 day = input("What day is it? ").strip().capitalize()
