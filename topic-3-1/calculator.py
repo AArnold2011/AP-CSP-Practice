@@ -26,7 +26,7 @@ while day not in periods_by_day:
 
 has_free_period = input("Do you have any free periods? (yes/no) ").strip().lower()
 free_periods = 0
-if has_free_period == "yes":
+if has_free_period in ("yes", "y"):
 	free_periods = int(input("How many free periods? "))
 elif periods <= 0:
 	print("The number of periods must be greater than zero.")	
